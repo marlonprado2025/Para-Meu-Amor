@@ -21,6 +21,7 @@ const container = document.querySelector('section');
 container.innerHTML = `
   <div class="photo-container"></div>
   <div class="nav-buttons">
+
     <button id="prev-btn"> <<<< </button>
     <button id="next-btn"> >>>> </button>
   </div>

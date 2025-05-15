@@ -199,10 +199,10 @@ footer {
 /* Estilo para o container das fotos */
 .photo-container {
   position: relative;
-  width: 80%;
+  width: 100%;
   max-width: 800px;
   height: 500px;
-  margin: 7px auto;
+  margin: 15px auto;
   overflow: visible;
   display: flex;
   justify-content: center;/* Centraliza horizontalmente */
@@ -212,11 +212,12 @@ footer {
 /* Estilo das fotos */
 .photo {
   position: absolute;
-  border: 5px solid #fff;
+  border: none;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
   border-radius: 10px;
   object-fit: cover;
   transition: all 0.5s ease;
+  box-shadow: 0 4px 10px rgba(241, 3, 3, 0.5);
 }
 
 /* Foto principal (centralizada e maior) */
@@ -227,7 +228,6 @@ footer {
   left: 50%;
   transform: translate(-50%, -50%) scale(1);
   z-index: 1000;
- 
 }
 
 /* Fotos de fundo (menores e sobrepostas) */
@@ -257,12 +257,12 @@ footer {
 /* Botões de navegação */
 .nav-buttons {
   position: absolute;
-  bottom: 10px;
+  bottom: 40px;
   left: 50%;
   transform: translateX(-50%);
   display: flex;
-  gap: 20px;
-  z-index: 10;
+  gap: 50px;
+  z-index: 10000;
 }
 
 .nav-buttons button {
@@ -274,14 +274,14 @@ footer {
   cursor: pointer;
   font-size: 1rem;
   transition: background-color 0.3s ease;
-  box-shadow: 0 4px 10px rgba(241, 3, 3, 0.5);
+
 }
 
 .nav-buttons button:hover {
   background-color: #ff0000;
 }
 
-/* Responsividade */
+/* Responsividade, ajuste para dispositivos móveis */
 @media (max-width: 768px) {
   .photo-container {
     height: 300px;
@@ -303,6 +303,50 @@ footer {
     font-size: 0.9rem;
   }
 }
+@media screen and (max-width: 480px) {
+  .photo-container {
+    height: 200px;
+    max-width: 90%;
+  }
+  .photo-main {
+    max-width: 150px;
+    max-height: 200px;
+  }
+  .photo-background {
+    max-width: 80px;
+    max-height: 100px;
+  }
+  .nav-buttons {
+    bottom: 5px;
+  }
+  .nav-buttons button {
+    padding: 8px 15px;
+    font-size: 0.9rem;
+  }
+    
+}
+@media screen and (max-width: 320px) {
+  .photo-container {
+    height: 150px;
+    max-width: 90%;
+  }
+  .photo-main {
+    max-width: 100px;
+    max-height: 150px;
+  }
+  .photo-background {
+    max-width: 60px;
+    max-height: 80px;
+  }
+  .nav-buttons {
+    bottom: 5px;
+  }
+  .nav-buttons button {
+    padding: 8px 15px;
+    font-size: 0.9rem;
+  }
+    
+}
 
 /* Estilização da tela inicial */
 .start-screen {
@@ -323,7 +367,7 @@ footer {
 .start-screen.active {
   display: flex;
 }
-
+/* Estilização da tela inicial, com fundo escuro, botão e texto, */
 .blur-background {
   position: absolute;
   top: 0;
@@ -333,7 +377,7 @@ footer {
   backdrop-filter: blur(5px);
   z-index: -1;
 }
-
+/* Estilização da tela inicial, com fundo escuro, botão e texto */
 #start-btn {
   background-color: #ff0000;
   color: #fff;
