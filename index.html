@@ -15,6 +15,14 @@
     <h2>Você está pronta??</h2>
     <button id="start-btn">Vamos lá ❤️</button>
   </div>
+ 
+ <div class="music-wrapper" id="musicWrapper">
+    <div class="vinyl"></div>
+    <div class="track-name">Ed Sheeran- Vida Toda Letra</div>
+    <div class="music-player">
+      <audio src="./assets/audio/Ed Sheeran - Perfect (online-audio-converter.com).mp3" loop controls id="audioPlayer" ></audio>
+    </div>
+  </div>
 
   <div class="hearts" id="hearts"></div>
 
@@ -31,24 +39,16 @@
       sou apaixonado no seu olhar e cada vez que te encontro tenho certeza que tomei a decisão certa em namorar com você, sempre estarei 
       ao seu lado, te amo minha princesa ❤</p>
   </section>
-
+ 
   <section class="tempo">
     <h1>Compartilhando momentos há</h1>
     <div class="countdown-container" id="countdown"></div>
   </section>
 
-  <footer>Desde 17 de Maio de 2014</footer>
+  <footer class="inicio-text ">Desde 17 de Maio de 2014</footer>
 
   <button class="toggle-button" onclick="togglePlayer()"> ❤️ </button>
-
-  <div class="music-wrapper" id="musicWrapper">
-    <div class="vinyl"></div>
-    <div class="track-name">Ed Sheeran- Vida Toda Letra</div>
-    <div class="music-player">
-      <audio id="audioPlayer" src="./assets/audio/Ed Sheeran - Perfect (online-audio-converter.com).mp3" autoplay loop controls></audio>
-    </div>
-  </div>
-
+  <script src="js/start.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
   <script src="js/swiper.js"></script>
   <script src="js/countdown.js"></script>

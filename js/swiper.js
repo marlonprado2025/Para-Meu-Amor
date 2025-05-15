@@ -1,4 +1,3 @@
-
 const imagens = [
   'foto1.jpg',
   'foto2.jpg',
@@ -38,7 +37,6 @@ const container = document.querySelector('section');
 container.innerHTML = `
   <div class="photo-container"></div>
   <div class="nav-buttons">
-
     <button id="prev-btn"> <<<< </button>
     <button id="next-btn"> >>>> </button>
   </div>
@@ -61,6 +59,7 @@ imagens.forEach((nome, index) => {
 // Variáveis para navegação
 let currentIndex = 0;
 const photos = document.querySelectorAll('.photo');
+let autoSlideInterval;
 
 // Função para atualizar as fotos
 function updatePhotos() {
@@ -74,15 +73,35 @@ function updatePhotos() {
   });
 }
 
+// Função para iniciar o carrossel automático
+function startAutoSlide() {
+  autoSlideInterval = setInterval(() => {
+    currentIndex = (currentIndex + 1) % photos.length;
+    updatePhotos();
+  }, 7000); // Troca a cada 5 segundos (5000ms)
+}
+
+// Função para pausar o carrossel automático
+function pauseAutoSlide() {
+  clearInterval(autoSlideInterval);
+}
+
+// Iniciar o carrossel automático ao carregar a página
+startAutoSlide();
+
 // Navegação com botões
 document.getElementById('next-btn').addEventListener('click', () => {
+  pauseAutoSlide(); // Pausa o carrossel ao interagir
   currentIndex = (currentIndex + 1) % photos.length;
   updatePhotos();
+  startAutoSlide(); // Reinicia o carrossel após a interação
 });
 
 document.getElementById('prev-btn').addEventListener('click', () => {
+  pauseAutoSlide(); // Pausa o carrossel ao interagir
   currentIndex = (currentIndex - 1 + photos.length) % photos.length;
   updatePhotos();
+  startAutoSlide(); // Reinicia o carrossel após a interação
 });
 
 // Navegação por deslizar (toque)
@@ -90,12 +109,14 @@ let touchStartX = 0;
 let touchEndX = 0;
 
 photoContainer.addEventListener('touchstart', (e) => {
+  pauseAutoSlide(); // Pausa o carrossel ao interagir
   touchStartX = e.changedTouches[0].screenX;
 });
 
 photoContainer.addEventListener('touchend', (e) => {
   touchEndX = e.changedTouches[0].screenX;
   handleSwipe();
+  startAutoSlide(); // Reinicia o carrossel após a interação
 });
 
 // Função para lidar com o deslize
