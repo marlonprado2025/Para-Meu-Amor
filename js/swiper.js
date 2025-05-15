@@ -13,7 +13,24 @@ const imagens = [
   'foto11.jpg',
   'foto12.jpg',
   'foto13.jpg',
-
+  'foto14.jpg',
+  'foto15.jpg',
+  'foto16.jpg',
+  'foto17.jpg',
+  'foto18.jpg',
+  'foto19.jpg',
+  'foto20.jpg',
+  'foto21.jpg',
+  'foto22.jpg',
+  'foto23.jpg',
+  'foto24.jpg',
+  'foto25.jpg',
+  'foto26.jpg',
+  'foto27.png',
+  'foto28.jpg',
+  'foto29.jpg',
+  'foto30.jpg',
+  'foto31.jpg',
 ];
 
 // Cria o container de fotos
