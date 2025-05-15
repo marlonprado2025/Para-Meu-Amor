@@ -1,0 +1,345 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Lora:ital,wght@0,400..700;1,400..700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  font-family: 'Arial', sans-serif;
+  background-color: #121212;
+  color: #f1f1f1;
+}
+
+section {
+  text-align: center;
+  position: relative;
+}
+
+/* Título e texto */
+.love-title {
+  font-family: Dancing Script, Dancing Script Fallback;
+  font-weight: 700;
+  font-style: normal;
+  color: #ff0000 ;
+  font-size: 1.875rem;
+  line-height: 2.25rem;
+  text-shadow: 2px 2px 4px rgba(117, 116, 116, 0.355); /* Sombra no texto */
+}
+
+.love-text {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, Liberation Mono, Courier New, monospace;
+  font-feature-settings: normal;
+  font-size: 1em;
+  font-variation-settings: normal;
+  max-width: 80%;
+  margin: 0 auto;
+  align-self: center;
+}
+
+/* Contador */
+.countdown-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.time-card {
+  background: #1e1e1e;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  min-width: 100px;
+}
+
+.time-card h2 {
+  font-size: 2rem;
+  margin-bottom: 5px;
+  color: #ffdd59;
+}
+
+.time-card span {
+  font-size: 1rem;
+  color: #aaa;
+}
+
+.section1 {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.tempo {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+.tempo h1 {
+  font-family: Lora, Lora Fallback;
+  font-style: italic;
+}
+
+.tempo p {
+  font-family: Lora, Lora Fallback;
+  font-style: italic;
+}
+
+footer {
+  padding: 20px;
+  color: #888;
+  text-align: center;
+  font-size: .875rem;
+  line-height: 1.25rem;
+}
+
+/* Player de música */
+@keyframes slide {
+  0%, 33% { transform: translateX(0); }
+  34%, 66% { transform: translateX(-100%); }
+  67%, 100% { transform: translateX(-200%); }
+}
+
+.music-wrapper {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background-color: #1f1f1f;
+  border: 2px solid #ff6b81;
+  border-radius: 12px;
+  padding: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.music-wrapper.hidden {
+  transform: translateX(120%);
+  opacity: 0;
+}
+
+.vinyl {
+  width: 50px;
+  height: 50px;
+  background: radial-gradient(circle, #444 20%, #000 70%);
+  border-radius: 50%;
+  position: relative;
+  animation: spin 4s linear infinite;
+}
+
+.vinyl::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 10px;
+  height: 10px;
+  background: #ff6b81;
+  border-radius: 50%;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.music-player audio {
+  height: 30px;
+  width: 150px;
+  filter: invert(1);
+}
+
+.toggle-button {
+  position: fixed;
+  bottom: 80%;
+  right: 5%;
+  background: #ff6b81;
+  border: none;
+  color: #fff;
+  padding: 10px;
+  border-radius: 50%;
+  cursor: pointer;
+  z-index: 1001;
+  box-shadow: 0 4px 10px rgba(218, 217, 217, 0.5);
+}
+
+.hearts {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.heart {
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  animation: fall linear infinite;
+}
+
+@keyframes fall {
+  0% { transform: translateY(-10%); }
+  100% { transform: translateY(110vh); }
+}
+
+/* Estilo para o container das fotos */
+.photo-container {
+  position: relative;
+  width: 80%;
+  max-width: 800px;
+  height: 500px;
+  margin: 7px auto;
+  overflow: visible;
+  display: flex;
+  justify-content: center;/* Centraliza horizontalmente */
+  touch-action: pan-y; /* Permite deslizar verticalmente, mas não horizontalmente */
+}
+
+/* Estilo das fotos */
+.photo {
+  position: absolute;
+  border: 5px solid #fff;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+  border-radius: 10px;
+  object-fit: cover;
+  transition: all 0.5s ease;
+}
+
+/* Foto principal (centralizada e maior) */
+.photo-main {
+  max-width: 400px;
+  max-height: 500px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(1);
+  z-index: 1000;
+ 
+}
+
+/* Fotos de fundo (menores e sobrepostas) */
+.photo-background {
+  max-width: 200px;
+  max-height: 250px;
+  opacity: 0.7;
+  transform-origin: center;
+}
+
+/* Posicionamento das fotos de fundo (mais espaçado) */
+.photo-background-0 { top: 10%; left: 5%; transform: rotate(-5deg); z-index: 1; }
+.photo-background-1 { top: 10%; left: 75%; transform: rotate(3deg); z-index: 2; }
+.photo-background-2 { top: 25%; left: 20%; transform: rotate(-2deg); z-index: 3; }
+.photo-background-3 { top: 30%; left: 60%; transform: rotate(4deg); z-index: 4; }
+.photo-background-4 { top: 40%; left: 10%; transform: rotate(-3deg); z-index: 5; }
+.photo-background-5 { top: 45%; left: 70%; transform: rotate(2deg); z-index: 6; }
+.photo-background-6 { top: 55%; left: 5%; transform: rotate(-4deg); z-index: 7; }
+.photo-background-7 { top: 60%; left: 75%; transform: rotate(5deg); z-index: 8; }
+.photo-background-8 { top: 75%; left: 15%; transform: rotate(-1deg); z-index: 9; }
+.photo-background-9 { top: 75%; left: 75%; transform: rotate(3deg); z-index: 10; }
+.photo-background-10 { top: 10%; left: 12%; transform: rotate(-2deg); z-index: 11; }
+.photo-background-11 { top: 65%; left: 5%; transform: rotate(4deg); z-index: 12; }
+.photo-background-12 { top: 35%; left: 85%; transform: rotate(-3deg); z-index: 13; }
+.photo-background-13 { top: 35%; left: 85%; transform: rotate(-3deg); z-index: 14; }
+
+/* Botões de navegação */
+.nav-buttons {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 20px;
+  z-index: 10;
+}
+
+.nav-buttons button {
+  background-color: rgba(0, 0, 0, 0.3);
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
+  box-shadow: 0 4px 10px rgba(241, 3, 3, 0.5);
+}
+
+.nav-buttons button:hover {
+  background-color: #ff0000;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .photo-container {
+    height: 300px;
+    max-width: 90%;
+  }
+  .photo-main {
+    max-width: 250px;
+    max-height: 300px;
+  }
+  .photo-background {
+    max-width: 120px;
+    max-height: 150px;
+  }
+  .nav-buttons {
+    bottom: 5px;
+  }
+  .nav-buttons button {
+    padding: 8px 15px;
+    font-size: 0.9rem;
+  }
+}
+
+/* Estilização da tela inicial */
+.start-screen {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  justify-content: center;
+  align-items: center;
+  z-index: 2000;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.start-screen.active {
+  display: flex;
+}
+
+.blur-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  backdrop-filter: blur(5px);
+  z-index: -1;
+}
+
+#start-btn {
+  background-color: #ff0000;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1.2rem;
+}

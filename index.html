@@ -1,278 +1,14 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="shortcut icon" href="Fotos/favicon_io/favicon.ico" type="image/x-icon">
-  <title>Davi & Patrícia</title>]
+  <link rel="shortcut icon" href="assets/images/favicon_io/favicon.ico" type="image/x-icon">
+  <title>Para meu Amor❤️</title>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
-
-  <style>
-    @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap');
-    @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Lora:ital,wght@0,400..700;1,400..700&display=swap');
-
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    body {
-      display: flex;
-      flex-direction: column;
-      gap: 2rem;
-      font-family: 'Arial', sans-serif;
-      background-color: #121212;
-      color: #f1f1f1;
-    }
-
-    section {
-      text-align: center;
-    }
-
-
-    /* Título e texto */
-    .love-title {
-      font-family: Dancing Script, Dancing Script Fallback;
-      font-weight: 700;
-      font-style: normal;
-      color: #ff0000;
-      font-size: 1.875rem;
-      line-height: 2.25rem;
-
-    }
-
-    .love-text {
-      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, Liberation Mono, Courier New, monospace;
-      font-feature-settings: normal;
-      font-size: 1em;
-      font-variation-settings: normal;
-      max-width: 80%;
-      margin: 0 auto;
-      align-self: center;
-    }
-
-    /* Contador */
-    .countdown-container {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 20px;
-    }
-
-    .time-card {
-      background: #1e1e1e;
-      padding: 20px;
-      border-radius: 10px;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-      min-width: 100px;
-    }
-
-    .time-card h2 {
-      font-size: 2rem;
-      margin-bottom: 5px;
-      color: #ffdd59;
-    }
-
-    .time-card span {
-      font-size: 1rem;
-      color: #aaa;
-    }
-
-    .section1 {
-      display: flex;
-      flex-direction: column;
-      gap: 2rem;
-    }
-
-    .tempo {
-      display: flex;
-      flex-direction: column;
-      gap: 3rem;
-    }
-
-    .tempo h1 {
-      font-family: Lora, Lora Fallback;
-      font-style: italic;
-    }
-
-    .tempo p {
-      font-family: Lora, Lora Fallback;
-      font-style: italic;
-    }
-
-    footer {
-      padding: 20px;
-      color: #888;
-      text-align: center;
-      font-size: .875rem;
-      line-height: 1.25rem;
-    }
-
-    /* Player de música */
-    @keyframes slide {
-
-      0%,
-      33% {
-        transform: translateX(0);
-      }
-
-      34%,
-      66% {
-        transform: translateX(-100%);
-      }
-
-      67%,
-      100% {
-        transform: translateX(-200%);
-      }
-    }
-
-    .music-wrapper {
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      background-color: #1f1f1f;
-      border: 2px solid #ff6b81;
-      border-radius: 12px;
-      padding: 12px;
-      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
-      z-index: 1000;
-      transition: transform 0.3s ease, opacity 0.3s ease;
-    }
-
-    .music-wrapper.hidden {
-      transform: translateX(120%);
-      opacity: 0;
-    }
-
-    .vinyl {
-      width: 50px;
-      height: 50px;
-      background: radial-gradient(circle, #444 20%, #000 70%);
-      border-radius: 50%;
-      position: relative;
-      animation: spin 4s linear infinite;
-    }
-
-    .vinyl::after {
-      content: '';
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      width: 10px;
-      height: 10px;
-      background: #ff6b81;
-      border-radius: 50%;
-    }
-
-    @keyframes spin {
-      0% {
-        transform: rotate(0deg);
-      }
-
-      100% {
-        transform: rotate(360deg);
-      }
-    }
-
-    .music-player audio {
-      height: 30px;
-      width: 150px;
-      filter: invert(1);
-    }
-
-    .toggle-button {
-      position: fixed;
-      bottom: 80%;
-      right: 5%;
-      background: #ff6b81;
-      border: none;
-      color: #fff;
-      padding: 10px;
-      border-radius: 50%;
-      cursor: pointer;
-      z-index: 1001;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
-    }
-
-    .hearts {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      overflow: hidden;
-      z-index: 0;
-      pointer-events: none;
-    }
-
-    .heart {
-      position: absolute;
-      width: 25px;
-      height: 25px;
-      animation: fall linear infinite;
-    }
-
-    @keyframes fall {
-      0% {
-        transform: translateY(-10%);
-      }
-
-      100% {
-        transform: translateY(110vh);
-      }
-    }
-
-    .swiper {
-      width: 100%;
-      max-width: 600px;
-      height: 400px;
-      margin: 0 auto;
-    }
-
-    .swiper-wrapper {
-      height: 100%;
-    }
-
-    .swiper-slide {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100%;
-    }
-
-    .swiper-slide img {
-      max-width: 100%;
-      max-height: 100%;
-      width: auto;
-      height: auto;
-      object-fit: contain;
-    }
-
-    /* Cor das bolinhas inativas */
-    .swiper-pagination-bullet {
-      background-color: #ff6b81;
-      /* sua cor personalizada */
-      opacity: 0.4;
-    }
-
-    /* Cor da bolinha ativa (slide atual) */
-    .swiper-pagination-bullet-active {
-      background-color: #ff0000;
-      /* cor quando está ativo */
-      opacity: 1;
-    }
-  </style>
+  <link rel="stylesheet" href="./CSS/styles.css" />
 </head>
-
 <body>
-  
   <div id="start-screen" class="start-screen">
     <div class="blur-background"></div>
     <h2>Você está pronta?</h2>
@@ -280,156 +16,52 @@
   </div>
 
   <div class="hearts" id="hearts"></div>
+
   <section>
-
-    <!-- Slider main container -->
     <div class="swiper">
-      <!-- Additional required wrapper -->
-      <div class="swiper-wrapper" id="swiper-wrapper">
-        <!-- Slides serão adicionados por JS -->
-      </div>
-
-      <!-- If we need pagination -->
+      <div class="swiper-wrapper" id="swiper-wrapper"></div>
       <div class="swiper-pagination"></div>
     </div>
-
-
   </section>
 
   <section class="section1">
     <h1 class="love-title">Marlon & Gabriella</h1>
-    <p class="love-text">Meu amor,sou grato por esses <span id="init"></span>  meses com você me fazendo feliz e tornando cada momento com você inesquecível, sou apaixonado no seu olhar e cada vez que te encontro tenho certeza que tomei a decisão certa em namorar com você,sempre estarei ao seu lado,te amo minha princesa❤</p>
+    <p class="love-text">Meu amor, sou grato por esses <span id="init"></span> anos com você me fazendo feliz e tornando cada momento com você inesquecível, sou apaixonado no seu olhar e cada vez que te encontro tenho certeza que tomei a decisão certa em namorar com você, sempre estarei ao seu lado, te amo minha princesa ❤</p>
   </section>
 
   <section class="tempo">
     <h1>Compartilhando momentos há</h1>
-    <div class="countdown-container" id="countdown">
-      <!-- Cards com o contador inseridos via JS -->
-    </div>
+    <div class="countdown-container" id="countdown"></div>
   </section>
 
+  <footer>Desde 17 de Maio de 2014</footer>
 
-  <footer>
-    Desde 12 de Março de 2025
-  </footer>
   <button class="toggle-button" onclick="togglePlayer()">🎵</button>
+
   <div class="music-wrapper" id="musicWrapper">
     <div class="vinyl"></div>
-    <div class="track-name">L7NNON - Vida Toda Letra</div>
+    <div class="track-name">Ed Sheeran- Vida Toda Letra</div>
     <div class="music-player">
-      <audio id="audioPlayer" src="./music/Ed Sheeran - Perfect (online-audio-converter.com).mp3" autoplay loop controls></audio>
+      <audio id="audioPlayer" src="./assets/audio/Ed Sheeran - Perfect (online-audio-converter.com).mp3" autoplay loop controls></audio>
     </div>
+  </div>
 
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <script src="js/swiper.js"></script>
+  <script src="js/countdown.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const startScreen = document.getElementById('start-screen');
+      const startBtn = document.getElementById('start-btn');
 
+      // Exibe a tela inicial por padrão
+      startScreen.style.display = 'flex';
 
-    <!-- Inclua a biblioteca corretamente, sem JS dentro dela -->
-    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-
-    <!-- Depois do body ou no final do body -->
-    <script>
-      const imagens = [
-        'foto1.jpg',
-        'img2.jpeg',
-        'img3.jpeg',
-        'img4.jpeg',
-        'img5.jpeg',
-        'img6.jpeg',
-        'img7.jpeg',
-        'img8.jpeg',
-        'img9.jpeg',
-        'img10.jpeg'
-      ];
-
-      const wrapper = document.getElementById("swiper-wrapper");
-
-      imagens.forEach((nome) => {
-        const slide = document.createElement('div');
-        slide.classList.add('swiper-slide');
-        slide.innerHTML = `<img src="Fotos/foto1.jpg/${nome}" alt="${nome}" />`;
-        wrapper.appendChild(slide);
-        const swiper = new Swiper('.swiper', {
-          loop: true,
-          autoplay: {
-            delay: 2000, // 3 segundos entre slides
-            disableOnInteraction: false, // continua passando mesmo após interação
-          },
-          pagination: {
-            el: '.swiper-pagination',
-            clickable: true,
-            type: 'bullets',
-          },
-        });
-
+      // Esconde a tela ao clicar no botão
+      startBtn.addEventListener('click', () => {
+        startScreen.style.display = 'none';
       });
-
-    </script>
-
-
-    <script>
-
-
-
-      const startDate = new Date("2014-05-17T00:00:00");
-      const countdownContainer = document.getElementById("countdown");
-      const initSpan = document.getElementById("init");
-      const numeroPorExtenso = [
-        "zero", "um", "dois", "três", "quatro", "cinco", "seis", "sete", "oito", "nove", "dez",
-        "onze", "doze", "treze", "quatorze", "quinze", "dezesseis", "dezessete", "dezoito", "dezenove",
-        "vinte", "vinte e um", "vinte e dois", "vinte e três", "vinte e quatro", "vinte e cinco",
-        "vinte e seis", "vinte e sete", "vinte e oito", "vinte e nove", "trinta"
-      ];
-      function updateCountdown() {
-        const now = new Date();
-        let diff = now - startDate;
-
-        const seconds = Math.floor(diff / 1000) % 60;
-        const minutes = Math.floor(diff / 1000 / 60) % 60;
-        const hours = Math.floor(diff / 1000 / 60 / 60) % 24;
-        const days = Math.floor(diff / (1000 * 60 * 60 * 24));
-        const months = Math.floor(days / 30.44);
-        const years = Math.floor(months / 12);
-
-        const timeValues = {
-          Anos: years,
-          Meses: months % 12,
-          Dias: days % 30 -1,
-          Horas: hours,
-          Minutos: minutes,
-          Segundos: seconds,
-        };
-
-        countdownContainer.innerHTML = Object.entries(timeValues).map(([label, value]) => `
-        <div class="time-card">
-          <h1>${value}</h1>
-          <p>${label.toLocaleLowerCase()}</p>
-        </div>
-      `).join("");
-
-        // Atualiza meses no parágrafo em extenso
-        const extenso = numeroPorExtenso[months] || months;
-        initSpan.textContent = extenso;
-      }
-      function togglePlayer() {
-        const wrapper = document.getElementById('musicWrapper');
-        wrapper.classList.toggle('hidden');
-      }
-      function createHearts() {
-        const container = document.getElementById('hearts');
-        for (let i = 0; i < 40; i++) {
-          const heart = document.createElement('div');
-          heart.className = 'heart';
-          heart.innerHTML = '❤️'
-          heart.style.left = Math.random() * 100 + '%';
-          heart.style.animationDuration = (5 + Math.random() * 5) + 's';
-          heart.style.opacity = Math.random() * 0.3 + 0.5;
-          container.appendChild(heart);
-        }
-      }
-      createHearts();
-      setInterval(updateCountdown, 1000);
-      updateCountdown();
-    </script>
-
+    });
+  </script>
 </body>
-
 </html>
