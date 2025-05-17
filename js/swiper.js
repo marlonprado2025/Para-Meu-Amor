@@ -37,8 +37,8 @@ const container = document.querySelector('section');
 container.innerHTML = `
   <div class="photo-container"></div>
   <div class="nav-buttons">
-    <button id="prev-btn"> <<<< </button>
-    <button id="next-btn"> >>>> </button>
+    <button id="prev-btn"> << </button>
+    <button id="next-btn"> >> </button>
   </div>
 `;
 const photoContainer = document.querySelector('.photo-container');

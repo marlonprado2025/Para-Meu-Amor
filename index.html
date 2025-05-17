@@ -3,68 +3,80 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="shortcut icon" href="assets/images/favicon_io/favicon.ico" type="image/x-icon">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
   <link rel="stylesheet" href="./CSS/styles.css" />
-  <title>Para meu Amor❤️</title>
+  <title>Para meu Amor ❤️</title>
 </head>
 
 <body>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const startScreen = document.getElementById('start-screen');
+      const startBtn = document.getElementById('start-btn');
+      const mainContent = document.getElementById('main-content');
+
+      // Exibe a tela inicial por padrão
+      startScreen.style.display = 'flex';
+      mainContent.style.display = 'none';
+
+      // Esconde a tela inicial e exibe o conteúdo principal ao clicar no botão
+      startBtn.addEventListener('click', () => {
+        startScreen.style.display = 'none';
+        mainContent.style.display = 'block';
+      });
+    });
+  </script>
+
   <div id="start-screen" class="start-screen">
     <div class="blur-background"></div>
     <h2>Você está pronta??</h2>
     <button id="start-btn">Vamos lá ❤️</button>
   </div>
- 
- <div class="music-wrapper" id="musicWrapper">
-    <div class="vinyl"></div>
-    <div class="track-name">Ed Sheeran- Vida Toda Letra</div>
-    <div class="music-player">
-      <audio src="./assets/audio/Ed Sheeran - Perfect (online-audio-converter.com).mp3" loop controls id="audioPlayer" ></audio>
-    </div>
-  </div>
 
   <div class="hearts" id="hearts"></div>
 
-  <section>
-    <div class="swiper">
-      <div class="swiper-wrapper" id="swiper-wrapper"></div>
-      <div class="swiper-pagination"></div>
+  <div id="main-content">
+    <div class="music-wrapper hidden" id="musicWrapper">
+      <div class="vinyl">❤️</div>
+      <div class="track-name">Ed Sheeran - Perfect</div>
+      <div class="music-player">
+        <audio src="./assets/audio/Ed Sheeran - Perfect (online-audio-converter.com).mp3" loop controls id="audioPlayer"></audio>
+      </div>
     </div>
-  </section>
 
-  <section class="section1">
-    <h1 class="love-title">❤️ Marlon & Gabriella ❤️</h1>
-    <p class="love-text"> Meu amor, sou grato por todos esses anos com você me fazendo feliz e tornando cada momento com você inesquecível, 
-      sou apaixonado no seu olhar e cada vez que te encontro tenho certeza que tomei a decisão certa em namorar com você, sempre estarei 
-      ao seu lado, te amo minha princesa ❤</p>
-  </section>
- 
+    <section>
+      <div class="swiper">
+        <div class="swiper-wrapper" id="swiper-wrapper"></div>
+        <div class="swiper-pagination"></div>
+      </div>
+    </section>
+
+    <section class="section1">
+      <br><br><br><br>
+      <h1 class="love-title">❤️ Marlon & Gabriella ❤️</h1>
+    
+      <p class="love-text">
+        Com todo carinho para minha princesinha da Disney. Meu amor, seu olhar me encantou desde o primeiro momento, 
+        o brilho nos seus olhos me fez me apaixonar e ainda me faz feliz. Se lembra de quando só podíamos trocar carinhos com as mãos, 
+        e mesmo assim, sentia você inteira em cada toque. Nossa química é tão única, tão nossa, que parece mágica. Nossa conexão é tão natural, tão boa. 
+        Você não me tem apenas como namorado, mas também como seu amigo, seu parceiro. Juntos, enfrentamos de tudo um pouco, 
+        e cada dia com você me mostra que é isso que quero pro resto da vida. Sempre estarei ao seu lado, te amo minha princesa linda ❤️
+      </p>
+    </section>
+  </div>
+
   <section class="tempo">
     <h1>Compartilhando momentos há</h1>
     <div class="countdown-container" id="countdown"></div>
+    <p id="init" class="inicio-text">Desde 17 de Maio de 2014</p>
   </section>
 
-  <footer class="inicio-text ">Desde 17 de Maio de 2014</footer>
+  <button class="toggle-button" onclick="togglePlayer()">❤️</button>
 
-  <button class="toggle-button" onclick="togglePlayer()"> ❤️ </button>
+
   <script src="js/start.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
   <script src="js/swiper.js"></script>
   <script src="js/countdown.js"></script>
-  <script>
-    document.addEventListener('DOMContentLoaded', () => {
-      const startScreen = document.getElementById('start-screen');
-      const startBtn = document.getElementById('start-btn');
-
-      // Exibe a tela inicial por padrão
-      startScreen.style.display = 'flex';
-
-      // Esconde a tela ao clicar no botão
-      startBtn.addEventListener('click', () => {
-        startScreen.style.display = 'none';
-      });
-    });
-  </script>
 </body>
 </html>

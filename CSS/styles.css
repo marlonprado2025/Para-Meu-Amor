@@ -7,10 +7,8 @@
   box-sizing: border-box;
 }
 
-
 /* Estilização da tela inicial */
 .start-screen {
-  display: none;
   position: fixed;
   top: 0;
   left: 0;
@@ -22,12 +20,9 @@
   z-index: 20000;
   flex-direction: column;
   gap: 1rem;
-}
-
-.start-screen.active {
   display: flex;
 }
-/* Estilização da tela inicial, com fundo escuro, botão e texto, */
+
 .blur-background {
   position: absolute;
   top: 0;
@@ -37,7 +32,7 @@
   backdrop-filter: blur(5px);
   z-index: -1;
 }
-/* Estilização da tela inicial, com fundo escuro, botão e texto */
+
 #start-btn {
   background-color: #ff0000;
   color: #fff;
@@ -46,28 +41,31 @@
   border-radius: 20px;
   cursor: pointer;
   font-size: 1.2rem;
+  animation: pulse 1.4s infinite;
+  box-shadow: 0 2px 20px rgba(214, 85, 173, 0.5);
 }
-.inicio-text {
-    margin-top: 100px;
-    margin-bottom: 20px;
-    color: #fff;
+
+#start-btn:hover {
+  opacity: 0.8;
 }
-#start-btn :hover{
-    opacity: 0.5;
-}
-#start-btn :active{
-    opacity: 0.5;
+
+#start-btn:active {
+  opacity: 0.5;
 }
 
 body {
   display: flex;
   flex-direction: column;
-  gap: 4rem;
+  gap: 6rem;
   font-family: 'Arial', sans-serif;
   color: #f1f1f1;
-background: #011a1a;
-background: linear-gradient(172deg, rgba(1, 26, 26, 1) 0%, rgba(209, 63, 153, 1) 100%);
- 
+  background: #011a1a;
+  background: linear-gradient(172deg, rgba(1, 26, 26, 1) 0%, rgba(209, 63, 153, 1) 100%);
+  min-height: 100vh;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+  background-size: cover;
 }
 
 section {
@@ -76,12 +74,6 @@ section {
 }
 
 /* Player de música */
-@keyframes slide {
-  0%, 33% { transform: translateX(0); }
-  34%, 66% { transform: translateX(-100%); }
-  67%, 100% { transform: translateX(-200%); }
-}
-
 .music-wrapper {
   position: fixed;
   bottom: 40px;
@@ -134,26 +126,74 @@ section {
   width: 150px;
   filter: invert(1);
 }
+
+.toggle-button {
+  position: fixed;
+  background: #ff6b8197;
+  border: none;
+  color: #fff;
+  padding: 10px;
+  border-radius: 50%;
+  cursor: pointer;
+  z-index: 1001;
+  box-shadow: 0 4px 10px rgba(245, 241, 241, 0.5);
+  bottom: 20px;
+  right: 20px;
+  height: 40px;
+  width: 40px;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    opacity: 0.5;
+    transform: scale(0.8);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1.5);
+  }
+}
+
+.toggle-button:hover {
+  opacity: 0.8;
+}
+
+.toggle-button:active {
+  opacity: 0.5;
+}
+
 /* Título e texto */
 .love-title {
-  font-family: Dancing Script, Dancing Script Fallback;
+  font-family: 'Dancing Script', cursive, sans-serif;
   font-weight: 900;
   font-style: normal;
-  color: #ff0000 ;
+  color: #ff0000;
   font-size: 1.875rem;
   line-height: 2.25rem;
-  text-shadow: 2px 2px 4px rgba(144, 143, 143, 0.355); /* Sombra no texto */
+  text-shadow: 2px 2px 4px rgba(144, 143, 143, 0.355);
   z-index: 1000;
+  animation: puls 8s infinite;
+}
+
+@keyframes puls {
+  0% {
+    opacity: 0.7;
+    transform: translateY(-5%) scale(0.8);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(-5%) scale(1);
+  }
 }
 
 .love-text {
-  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, Liberation Mono, Courier New, monospace;
-  font-feature-settings: normal;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;
   font-size: 1em;
-  font-variation-settings: normal;
+  font-weight: 400;
   max-width: 80%;
   margin: 0 auto;
-  align-self: center;
+  text-align: center;
 }
 
 /* Contador */
@@ -172,13 +212,13 @@ section {
   min-width: 100px;
 }
 
-.time-card h2 {
+.time-card h1 {
   font-size: 2rem;
   margin-bottom: 5px;
   color: #ffdd59;
 }
 
-.time-card span {
+.time-card p {
   font-size: 1rem;
   color: #aaa;
 }
@@ -196,41 +236,19 @@ section {
 }
 
 .tempo h1 {
-  font-family: Lora, Lora Fallback;
+  font-family: 'Lora', serif;
   font-style: italic;
 }
 
 .tempo p {
-  font-family: Lora, Lora Fallback;
+  font-family: 'Lora', serif;
   font-style: italic;
 }
-
-footer {
-  padding: 20px;
-  color: #888;
-  text-align: center;
-  font-size: .875rem;
-  line-height: 1.25rem;
+.inicio-text{
+  margin-bottom: 50px;
 }
 
-
-.toggle-button {
-  position: fixed;
-  bottom: 60%;
-  right: 5%;
-  background: #ff6b8197;
-  border: none;
-  color: #fff;
-  padding: 10px;
-  border-radius: 50%;
-  cursor: pointer;
-  z-index: 1001;
-  box-shadow: 0 4px 10px rgba(245, 241, 241, 0.5);
-}
-.toggle-button:hover {opacity: 0.8;}
-.toggle-button:active {opacity: 0.5;}
-
-
+/* Estilo para o container das fotos */
 .hearts {
   position: fixed;
   top: 0;
@@ -238,7 +256,7 @@ footer {
   width: 100%;
   height: 100%;
   overflow: hidden;
-  z-index: 0;
+  z-index: 10;
   pointer-events: none;
 }
 
@@ -263,8 +281,8 @@ footer {
   margin: 15px auto;
   overflow: visible;
   display: flex;
-  justify-content: center;/* Centraliza horizontalmente */
-  touch-action: pan-y; /* Permite deslizar verticalmente, mas não horizontalmente */
+  justify-content: center;
+  touch-action: pan-y;
 }
 
 /* Estilo das fotos */
@@ -278,17 +296,17 @@ footer {
   box-shadow: 0 4px 10px rgba(241, 3, 3, 0.5);
 }
 
-/* Foto principal (centralizada e maior) */
+/* Foto principal */
 .photo-main {
   max-width: 400px;
   max-height: 500px;
-  top: 50%;
+  top: 70%;
   left: 50%;
   transform: translate(-50%, -50%) scale(1);
   z-index: 1000;
 }
 
-/* Fotos de fundo (menores e sobrepostas) */
+/* Fotos de fundo */
 .photo-background {
   max-width: 200px;
   max-height: 250px;
@@ -296,21 +314,21 @@ footer {
   transform-origin: center;
 }
 
-/* Posicionamento das fotos de fundo (mais espaçado) , com rotação e z-index */
+/* Posicionamento das fotos de fundo */
 .photo-background-0 { top: 10%; left: 5%; transform: rotate(-5deg); z-index: 1; }
 .photo-background-1 { top: 10%; left: 75%; transform: rotate(3deg); z-index: 2; }
 .photo-background-2 { top: 25%; left: 20%; transform: rotate(-2deg); z-index: 3; }
 .photo-background-3 { top: 30%; left: 60%; transform: rotate(4deg); z-index: 4; }
-.photo-background-4 { top: 40%; left: 10%; transform: rotate(-3deg); z-index: 5; }
+.photo-background-4 { top: 30%; left: 3%; transform: rotate(-3deg); z-index: 5; }
 .photo-background-5 { top: 45%; left: 70%; transform: rotate(2deg); z-index: 6; }
-.photo-background-6 { top: 55%; left: 5%; transform: rotate(-4deg); z-index: 7; }
+.photo-background-6 { top: 55%; left: 4%; transform: rotate(-4deg); z-index: 7; }
 .photo-background-7 { top: 60%; left: 75%; transform: rotate(5deg); z-index: 8; }
 .photo-background-8 { top: 75%; left: 15%; transform: rotate(-1deg); z-index: 9; }
 .photo-background-9 { top: 75%; left: 75%; transform: rotate(3deg); z-index: 10; }
 .photo-background-10 { top: 10%; left: 12%; transform: rotate(-2deg); z-index: 11; }
 .photo-background-11 { top: 65%; left: 5%; transform: rotate(4deg); z-index: 12; }
 .photo-background-12 { top: 35%; left: 85%; transform: rotate(-3deg); z-index: 13; }
-.photo-background-13 { top: 20%; left: 25%; transform: rotate(2deg); z-index: 14; }
+.photo-background-13 { top: 10%; left: 25%; transform: rotate(2deg); z-index: 14; }
 .photo-background-14 { top: 50%; left: 15%; transform: rotate(-5deg); z-index: 15; }
 .photo-background-15 { top: 70%; left: 65%; transform: rotate(3deg); z-index: 16; }
 .photo-background-16 { top: 30%; left: 30%; transform: rotate(-4deg); z-index: 17; }
@@ -319,14 +337,14 @@ footer {
 .photo-background-19 { top: 45%; left: 25%; transform: rotate(4deg); z-index: 20; }
 .photo-background-20 { top: 65%; left: 80%; transform: rotate(-3deg); z-index: 21; }
 .photo-background-21 { top: 25%; left: 70%; transform: rotate(2deg); z-index: 22; }
-.photo-background-22 { top: 55%; left: 30%; transform: rotate(-5deg); z-index: 23; }
+.photo-background-22 { top: 85%; left: 30%; transform: rotate(-5deg); z-index: 23; }
 .photo-background-23 { top: 40%; left: 85%; transform: rotate(3deg); z-index: 24; }
 .photo-background-24 { top: 70%; left: 10%; transform: rotate(-4deg); z-index: 25; }
-.photo-background-25 { top: 15%; left: 40%; transform: rotate(5deg); z-index: 26; }
+.photo-background-25 { top: 10%; left: 40%; transform: rotate(5deg); z-index: 26; }
 .photo-background-26 { top: 50%; left: 70%; transform: rotate(-2deg); z-index: 27; }
 .photo-background-27 { top: 35%; left: 45%; transform: rotate(4deg); z-index: 28; }
 .photo-background-28 { top: 60%; left: 55%; transform: rotate(-3deg); z-index: 29; }
-.photo-background-29 { top: 20%; left: 90%; transform: rotate(2deg); z-index: 30; }
+.photo-background-29 { top: 10%; left: 60%; transform: rotate(2deg); z-index: 30; }
 .photo-background-30 { top: 80%; left: 50%; transform: rotate(-5deg); z-index: 31; }
 
 /* Botões de navegação */
@@ -336,27 +354,27 @@ footer {
   left: 50%;
   transform: translateX(-50%);
   display: flex;
-  gap: 80px;
+  gap: 150px;
   z-index: 9000;
 }
 
 .nav-buttons button {
-  background-color: rgba(0, 0, 0, 0.3);
+  background-color: rgba(0, 0, 0, 0.1);
   color: #fff;
   border: none;
   padding: 10px 20px;
   border-radius: 5px;
   cursor: pointer;
   font-size: 1rem;
-  transition: background-color 0.3s ease;
 
+  transition: background-color 0.3s ease;
 }
 
 .nav-buttons button:hover {
   background-color: #ff0000;
 }
 
-/* Responsividade, ajuste para dispositivos móveis */
+/* Responsividade */
 @media (max-width: 768px) {
   .photo-container {
     height: 300px;
@@ -377,15 +395,18 @@ footer {
     padding: 8px 15px;
     font-size: 0.9rem;
   }
+  .toggle-button {
+    bottom: 10px;
+    right: 10px;
+  }
 }
 
-/* Responsividade, ajuste para dispositivos móveis */
 @media screen and (max-width: 480px) {
-  body{
+  body {
     margin-top: 40px;
-    height: 100vh;
+    min-height: 100vh;
   }
-    .photo-container {
+  .photo-container {
     height: 200px;
     max-width: 90%;
   }
@@ -404,8 +425,11 @@ footer {
     padding: 8px 15px;
     font-size: 0.9rem;
   }
-    
+  .music-wrapper {
+    height: 50px;
+  }
 }
+
 @media screen and (max-width: 320px) {
   .photo-container {
     height: 150px;
@@ -426,5 +450,4 @@ footer {
     padding: 8px 15px;
     font-size: 0.9rem;
   }
-    
 }
