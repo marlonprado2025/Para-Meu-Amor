@@ -77,7 +77,7 @@ section {
 .music-wrapper {
   position: fixed;
   bottom: 40px;
-  right: 20px;
+  right: 30px;
   display: flex;
   align-items: center;
   gap: 12px;
@@ -215,7 +215,7 @@ section {
 .time-card h1 {
   font-size: 2rem;
   margin-bottom: 5px;
-  color: #ffdd59;
+  color: #e3e881de;
 }
 
 .time-card p {
@@ -226,7 +226,8 @@ section {
 .section1 {
   display: flex;
   flex-direction: column;
-  gap: 2rem;
+  margin-top: 150px;
+  gap: 4rem;
 }
 
 .tempo {
@@ -245,7 +246,7 @@ section {
   font-style: italic;
 }
 .inicio-text{
-  margin-bottom: 50px;
+  margin-bottom: 100px;
 }
 
 /* Estilo para o container das fotos */
@@ -321,12 +322,12 @@ section {
 .photo-background-3 { top: 30%; left: 60%; transform: rotate(4deg); z-index: 4; }
 .photo-background-4 { top: 30%; left: 3%; transform: rotate(-3deg); z-index: 5; }
 .photo-background-5 { top: 45%; left: 70%; transform: rotate(2deg); z-index: 6; }
-.photo-background-6 { top: 55%; left: 4%; transform: rotate(-4deg); z-index: 7; }
+.photo-background-6 { top: 55%; left: 2%; transform: rotate(-10deg); z-index: 7; }
 .photo-background-7 { top: 60%; left: 75%; transform: rotate(5deg); z-index: 8; }
 .photo-background-8 { top: 75%; left: 15%; transform: rotate(-1deg); z-index: 9; }
 .photo-background-9 { top: 75%; left: 75%; transform: rotate(3deg); z-index: 10; }
 .photo-background-10 { top: 10%; left: 12%; transform: rotate(-2deg); z-index: 11; }
-.photo-background-11 { top: 65%; left: 5%; transform: rotate(4deg); z-index: 12; }
+.photo-background-11 { top: 65%; left: 5%; transform: rotate(-14deg); z-index: 12; }
 .photo-background-12 { top: 35%; left: 85%; transform: rotate(-3deg); z-index: 13; }
 .photo-background-13 { top: 10%; left: 25%; transform: rotate(2deg); z-index: 14; }
 .photo-background-14 { top: 50%; left: 15%; transform: rotate(-5deg); z-index: 15; }
@@ -335,17 +336,19 @@ section {
 .photo-background-17 { top: 60%; left: 20%; transform: rotate(5deg); z-index: 18; }
 .photo-background-18 { top: 15%; left: 80%; transform: rotate(-2deg); z-index: 19; }
 .photo-background-19 { top: 45%; left: 25%; transform: rotate(4deg); z-index: 20; }
-.photo-background-20 { top: 65%; left: 80%; transform: rotate(-3deg); z-index: 21; }
+.photo-background-20 { top: 65%; left: 80%; transform: rotate(16deg); z-index: 21; }
 .photo-background-21 { top: 25%; left: 70%; transform: rotate(2deg); z-index: 22; }
-.photo-background-22 { top: 85%; left: 30%; transform: rotate(-5deg); z-index: 23; }
-.photo-background-23 { top: 40%; left: 85%; transform: rotate(3deg); z-index: 24; }
+.photo-background-22 { top: 75%; left: 30%; transform: rotate(-5deg); z-index: 23; }
+.photo-background-23 { top: 40%; left: 85%; transform: rotate(5deg); z-index: 24; }
 .photo-background-24 { top: 70%; left: 10%; transform: rotate(-4deg); z-index: 25; }
 .photo-background-25 { top: 10%; left: 40%; transform: rotate(5deg); z-index: 26; }
 .photo-background-26 { top: 50%; left: 70%; transform: rotate(-2deg); z-index: 27; }
 .photo-background-27 { top: 35%; left: 45%; transform: rotate(4deg); z-index: 28; }
-.photo-background-28 { top: 60%; left: 55%; transform: rotate(-3deg); z-index: 29; }
+.photo-background-28 { top: 75%; left: 55%; transform: rotate(-3deg); z-index: 29; }
 .photo-background-29 { top: 10%; left: 60%; transform: rotate(2deg); z-index: 30; }
 .photo-background-30 { top: 80%; left: 50%; transform: rotate(-5deg); z-index: 31; }
+.photo-background-30 { top: 4%; left: 10%; transform: rotate(-5deg); z-index: 32; }
+.photo-background-30 { top: 10%; left: 18%; transform: rotate(-5deg); z-index: 33; }
 
 /* Botões de navegação */
 .nav-buttons {

@@ -30,6 +30,9 @@ const imagens = [
   'foto29.jpg',
   'foto30.jpg',
   'foto31.jpg',
+  'foto32.jpg',
+  'foto33.jpg',
+
 ];
 
 // Cria o container de fotos
